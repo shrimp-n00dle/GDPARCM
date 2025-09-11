@@ -19,6 +19,9 @@ public:
 	sf::Texture* getStreamTextureFromList(const int index);
 	int getNumLoadedStreamTextures() const;
 
+	void loadAll();
+	sf::Texture* getTexture(std::string);
+
 private:
 	TextureManager();
 	TextureManager(TextureManager const&) {};             // copy constructor is private
@@ -33,6 +36,9 @@ private:
 	int streamingAssetCount = 0;
 
 	void countStreamingAssets();
-	void instantiateAsTexture(String path, String assetName, bool isStreaming);
+	void instantiateAsTexture(String path, std::string assetName, bool isStreaming);
+
+	void loadTexture(std::string, std::string);
+	std::unordered_map<std::string, sf::Texture*> textureTileMap;
 
 };

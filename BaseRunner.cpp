@@ -8,12 +8,16 @@
 /// <summary>
 /// This demonstrates a running parallax background where after X seconds, a batch of assets will be streamed and loaded.
 /// </summary>
-const sf::Time BaseRunner::TIME_PER_FRAME = sf::seconds(1.f / 60.f);
+const float FRAME_RATE = 60.0f;
+const sf::Time BaseRunner::TIME_PER_FRAME = sf::seconds(1.f / FRAME_RATE);
 
 BaseRunner::BaseRunner() :
 	window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "HO: Entity Component", sf::Style::Close) {
 	//load initial textures
 	TextureManager::getInstance()->loadFromAssetList();
+
+	//For the Tiles
+	TextureManager::getInstance()->loadAll();
 
 	//load objects
 	BGObject* bgObject = new BGObject("BGObject");
@@ -24,7 +28,26 @@ BaseRunner::BaseRunner() :
 
 	FPSCounter* fpsCounter = new FPSCounter();
 	GameObjectManager::getInstance()->addObject(fpsCounter);
+
+	TextureDisplay::initialize();
 }
+
+//BaseRunner* BaseRunner::sharedInstance = NULL;
+//
+//BaseRunner* BaseRunner::getInstance() {
+//	if (sharedInstance == NULL) {
+//		//initialize
+//		sharedInstance = new BaseRunner();
+//	}
+//
+//	return sharedInstance;
+//}
+
+float BaseRunner::getFPS()
+{
+	return BaseRunner::TIME_PER_FRAME.asSeconds();
+}
+
 
 void BaseRunner::run() {
 	sf::Clock clock;
@@ -63,6 +86,17 @@ void BaseRunner::processEvents()
 
 void BaseRunner::update(sf::Time elapsedTime) {
 	GameObjectManager::getInstance()->update(elapsedTime);
+
+	//Separate update for the tiles FOR NOW
+	this->ticks += TIME_PER_FRAME.asMilliseconds();
+
+	if (ticks >= 1.0f)
+	{
+		//reset 
+		ticks = 0.0f;
+
+	}
+
 }
 
 void BaseRunner::render() {

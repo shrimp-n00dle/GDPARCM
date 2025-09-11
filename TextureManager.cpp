@@ -47,6 +47,7 @@ void TextureManager::loadSingleStreamAsset(int index)
 			//simulate loading of very large file
 			//<code here for thread sleeping. Fill this up only when instructor told so.>
 
+
 			
 			//<code here for loading asset>
 			String assetName = "";
@@ -115,4 +116,39 @@ void TextureManager::instantiateAsTexture(String path, String assetName, bool is
 		this->baseTextureList.push_back(texture);
 	}
 	
+}
+
+/**ADDED CODE**/
+void TextureManager::loadAll()
+{
+	
+	for (int i = 0; i < 480; i++)
+	{
+		std::string str_i = std::to_string(i);
+		loadTexture("tile" + str_i, "Media/Streaming/tile00" + str_i + ".png");
+	}
+	
+}
+
+void TextureManager::loadTexture(std::string key, std::string path)
+{
+	sf::Texture* texture = new sf::Texture();
+	texture->loadFromFile(path);
+	textureTileMap[key] = texture;
+
+	// NEVER DO THIS >> &mEnemyList[0]
+}
+
+sf::Texture* TextureManager::getTexture(std::string key)
+{
+	if (textureTileMap[key] != nullptr)
+	{
+		return textureTileMap[key];
+	}
+
+	else
+	{
+		std::cout << "No texture found for " << key << std::endl;
+		return nullptr;
+	}
 }

@@ -1,5 +1,16 @@
 #include "Factory.hpp"
 
+Factory* Factory::sharedInstance = nullptr;
+
+Factory* Factory::getInstance()
+{
+	if (sharedInstance == nullptr)
+	{
+		sharedInstance = new Factory();
+	}
+
+	return sharedInstance;
+}
 void Factory::initializeAssets()
 {
 	sf::CircleShape shape(100.f);

@@ -5,11 +5,12 @@ class Renderer
 {
 public:
 	static Renderer* getInstance();
-	//Factory* factory;
+	Factory* factory;
 
 	//~Renderer() {};
 
 	void drawAssets(sf::RenderWindow* window, sf::CircleShape* shape);
+	void test();
 
 
 private:

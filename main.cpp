@@ -15,6 +15,9 @@ int main()
 
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
+
+    Factory::getInstance()->initializeAssets();
+
     /*Main Game Loop*/
     while (window.isOpen())
     {

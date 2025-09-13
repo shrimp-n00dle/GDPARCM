@@ -3,9 +3,15 @@
 
 //Renderer::Renderer()
 //{
-//	/*std::cout << "Renderer()" << std::endl;
-//	//factory->initializeAssets();*/
+//	std::cout << "Renderer()" << std::endl;
+//	factory->initializeAssets();
 //}
+
+void Renderer::test()
+{
+	std::cout << "test()" << std::endl;
+	factory->initializeAssets();
+}
 
 Renderer* Renderer::sharedInstance = nullptr;
 

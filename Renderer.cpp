@@ -16,13 +16,10 @@ void Renderer::drawAssets(sf::RenderWindow* window, sf::CircleShape* shape)
 {
 	window->clear();
 
-	window->draw(*Factory::getInstance()->assetSpriteList[0]);
-	/*for (int i = 0; i < factory->assetList.size(); i++)
-	{
-		
-		window->draw(*factory->assetList[i]);
 
-	}*/
-	//window->draw(*shape);
+	for (int i = 0; i < Factory::getInstance()->assetSpriteList.size(); i++)
+	{
+		window->draw(*Factory::getInstance()->assetSpriteList[i]);
+	}
 	window->display();
 }

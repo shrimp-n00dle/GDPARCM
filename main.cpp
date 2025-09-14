@@ -10,12 +10,9 @@ int main()
     sf::RenderWindow window(sf::VideoMode(1000, 500), "SFML works!");
 
     /*PHASES TO DO
-    1. Render
+    1. Render - DONE
     2. Update
     3. Process Events*/
-
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
 
     Factory::getInstance()->initializeAssets();
 
@@ -34,7 +31,7 @@ int main()
         }
 
         /*Draw and Render*/
-        Renderer::getInstance()->drawAssets(&window, &shape);    
+        Renderer::getInstance()->drawAssets(&window);    
     }
     return 0;
 }

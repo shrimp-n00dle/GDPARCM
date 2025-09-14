@@ -9,7 +9,7 @@ public:
 	static Renderer* getInstance();
 	//~Renderer() {};
 
-	void drawAssets(sf::RenderWindow* window);
+	void drawAssets(sf::RenderWindow* window, int index);
 
 
 

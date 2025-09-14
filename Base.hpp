@@ -13,5 +13,6 @@ public:
 
 private:
 	const float SPEED_MULTIPLIER = 3000.0f;
+
 };
 

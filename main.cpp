@@ -33,6 +33,10 @@ int main()
     sf::Time timeSinceLastUpdate = sf::Time::Zero;
     Base base;
 
+    int index = 0;
+
+    sf::Time imgTimer = sf::Time::Zero;
+
     window.setFramerateLimit(60);
 
     /*Main Game Loop*/
@@ -42,9 +46,9 @@ int main()
         base.processEvents(&window);
 
         //Add cmd prompt print for now
-   /*     sf::Time frameRate = frameClock.getElapsedTime();
-        std::cout << 1.0f / frameRate.asSeconds() << std::endl;
-        frameClock.restart().asSeconds();*/
+        sf::Time frameRate = frameClock.getElapsedTime();
+        //std::cout << 1.0f / frameRate.asSeconds() << std::endl;
+        frameClock.restart().asSeconds();
 
 
         timeSinceLastUpdate += clock.restart();
@@ -53,14 +57,11 @@ int main()
             timeSinceLastUpdate -= TimePerFrame;
             base.processEvents(&window);
             base.performUpdates(TimePerFrame);
-
            
         }
 
-
-
         /*Draw and Render*/
-        Renderer::getInstance()->drawAssets(&window);    
+        Renderer::getInstance()->drawAssets(&window, index);    
     }
 
 

@@ -25,7 +25,8 @@ void Factory::initializeAssets()
 	assetSpriteList.push_back(sprite);
 
 	/*Images*/
-	for (int i = 0; i < 480; i++)
+	//first 5 muna
+	for (int i = 0; i < 5; i++)
 	{
 		sf::Texture* texture = new sf::Texture();
 		std::string index = std::to_string(i);

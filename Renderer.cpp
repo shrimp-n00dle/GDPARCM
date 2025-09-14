@@ -12,7 +12,7 @@ Renderer* Renderer::getInstance()
 	return sharedInstance;
 }
 
-void Renderer::drawAssets(sf::RenderWindow* window, sf::CircleShape* shape)
+void Renderer::drawAssets(sf::RenderWindow* window)
 {
 	window->clear();
 

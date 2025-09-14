@@ -9,7 +9,7 @@ public:
 	static Renderer* getInstance();
 	//~Renderer() {};
 
-	void drawAssets(sf::RenderWindow* window, sf::CircleShape* shape);
+	void drawAssets(sf::RenderWindow* window);
 
 
 

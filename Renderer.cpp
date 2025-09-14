@@ -16,7 +16,7 @@ void Renderer::drawAssets(sf::RenderWindow* window, sf::CircleShape* shape)
 {
 	window->clear();
 
-	window->draw(*Factory::getInstance()->assetList[0]);
+	window->draw(*Factory::getInstance()->assetSpriteList[0]);
 	/*for (int i = 0; i < factory->assetList.size(); i++)
 	{
 		

@@ -13,14 +13,15 @@ Factory* Factory::getInstance()
 }
 void Factory::initializeAssets()
 {
-	sf::CircleShape* shape = new sf::CircleShape();
-	shape->setScale(100, 100);
-	shape->setFillColor(sf::Color::Green);
-	assetList.push_back(shape);
+	sf::Texture* texture = new sf::Texture();
+	texture->loadFromFile("Media/Textures/Desert.png");
+	if (!texture->loadFromFile("Media/Textures/Desert.png"))
+	{
+		std::cout << "file not found" << std::endl;
+	}
 
-	sf::CircleShape* shape2 = new sf::CircleShape();
-	shape2->setScale(200, 200);
-	shape2->setPosition(500,200);
-	shape2->setFillColor(sf::Color::Yellow);
-	assetList.push_back(shape2);
+	sf::Sprite* sprite = new sf::Sprite();
+	sprite->setTexture(*texture);
+	assetSpriteList.push_back(sprite);
+
 }

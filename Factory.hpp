@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "unordered_map"
+#include "iostream"
 class Factory
 {
 public:
@@ -10,8 +11,8 @@ public:
 
 	void initializeAssets();
 
-	//Shapes for now
-	std::vector<sf::CircleShape*> assetList;
+	//Holds all sprite assets
+	std::vector<sf::Sprite*> assetSpriteList;
 
 private:
 

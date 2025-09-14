@@ -24,4 +24,20 @@ void Factory::initializeAssets()
 	sprite->setTexture(*texture);
 	assetSpriteList.push_back(sprite);
 
+	/*Images*/
+	for (int i = 0; i < 480; i++)
+	{
+		sf::Texture* texture = new sf::Texture();
+		std::string index = std::to_string(i);
+		std::string path = "Media/Streaming/tile00" + index + ".png";
+		texture->loadFromFile(path);
+		if (!texture->loadFromFile(path))
+		{
+			std::cout << "file not found" << std::endl;
+		}
+
+		sf::Sprite* sprite = new sf::Sprite();
+		sprite->setTexture(*texture);
+		assetSpriteList.push_back(sprite);
+	}
 }

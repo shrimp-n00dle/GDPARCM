@@ -13,13 +13,13 @@ int main()
 
     /*PHASES TO DO
      1. Render - DONE
-     2. Update
+     2. Update - 90%
      3. Process Events -- for inputs and such [Will do after set up is done]
 
      to do:
 
      1. do set up complete [Today]
-     2. ray tracing [Wednesday]
+     2. ray tracing [Monday]
      3. polish the base engine [Friday]
      */
 

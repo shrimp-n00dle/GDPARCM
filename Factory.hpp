@@ -5,14 +5,17 @@ class Factory
 {
 public:
 	static Factory* getInstance();
-	//Shapes for now
-	std::vector<sf::CircleShape*> assetList;
 
 	~Factory() {};
 
 	void initializeAssets();
 
+	//Shapes for now
+	std::vector<sf::CircleShape*> assetList;
+
 private:
+
+
 	//singletons
 	Factory() {};
 	Factory(Factory const&) {};

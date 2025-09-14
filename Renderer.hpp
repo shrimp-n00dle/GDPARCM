@@ -1,16 +1,17 @@
 #pragma once
 #include "iostream"
+#include <SFML/Graphics.hpp>
+#include "unordered_map"
 #include "Factory.hpp"
 class Renderer
 {
 public:
 	static Renderer* getInstance();
-	Factory* factory;
-
 	//~Renderer() {};
 
 	void drawAssets(sf::RenderWindow* window, sf::CircleShape* shape);
-	void test();
+
+
 
 
 private:

@@ -1,4 +1,5 @@
 #include "Renderer.hpp"
+#include "Factory.hpp"
 int main()
 {
     /*Default resolution is 1920 x 1080

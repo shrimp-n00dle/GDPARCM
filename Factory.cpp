@@ -13,11 +13,14 @@ Factory* Factory::getInstance()
 }
 void Factory::initializeAssets()
 {
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
-	assetList.push_back(&shape);
+	sf::CircleShape* shape = new sf::CircleShape();
+	shape->setScale(100, 100);
+	shape->setFillColor(sf::Color::Green);
+	assetList.push_back(shape);
 
-	sf::CircleShape shape2(500.f);
-	shape2.setFillColor(sf::Color::Yellow);
-	assetList.push_back(&shape2);
+	sf::CircleShape* shape2 = new sf::CircleShape();
+	shape2->setScale(200, 200);
+	shape2->setPosition(500,200);
+	shape2->setFillColor(sf::Color::Yellow);
+	assetList.push_back(shape2);
 }

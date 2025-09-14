@@ -11,7 +11,7 @@ public:
 
 	void initializeAssets();
 
-	//Holds all sprite assets
+	//Holds all sprite assets, change to sf::Drawable* to hold Texts as well
 	std::vector<sf::Sprite*> assetSpriteList;
 
 private:

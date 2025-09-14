@@ -42,9 +42,9 @@ int main()
         base.processEvents(&window);
 
         //Add cmd prompt print for now
-        sf::Time frameRate = frameClock.getElapsedTime();
+   /*     sf::Time frameRate = frameClock.getElapsedTime();
         std::cout << 1.0f / frameRate.asSeconds() << std::endl;
-        frameClock.restart().asSeconds();
+        frameClock.restart().asSeconds();*/
 
 
         timeSinceLastUpdate += clock.restart();

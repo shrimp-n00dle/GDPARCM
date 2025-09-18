@@ -16,9 +16,6 @@ BaseRunner::BaseRunner() :
 	//load initial textures
 	TextureManager::getInstance()->loadFromAssetList();
 
-	//For the Tiles
-	TextureManager::getInstance()->loadAll();
-
 	//load objects
 	BGObject* bgObject = new BGObject("BGObject");
 	GameObjectManager::getInstance()->addObject(bgObject);
@@ -28,8 +25,6 @@ BaseRunner::BaseRunner() :
 
 	FPSCounter* fpsCounter = new FPSCounter();
 	GameObjectManager::getInstance()->addObject(fpsCounter);
-
-	TextureDisplay::initialize();
 }
 
 //BaseRunner* BaseRunner::sharedInstance = NULL;

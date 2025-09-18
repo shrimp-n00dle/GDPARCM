@@ -117,38 +117,3 @@ void TextureManager::instantiateAsTexture(String path, String assetName, bool is
 	}
 	
 }
-
-/**ADDED CODE**/
-void TextureManager::loadAll()
-{
-	
-	for (int i = 0; i < 480; i++)
-	{
-		std::string str_i = std::to_string(i);
-		loadTexture("tile" + str_i, "Media/Streaming/tile00" + str_i + ".png");
-	}
-	
-}
-
-void TextureManager::loadTexture(std::string key, std::string path)
-{
-	sf::Texture* texture = new sf::Texture();
-	texture->loadFromFile(path);
-	textureTileMap[key] = texture;
-
-	// NEVER DO THIS >> &mEnemyList[0]
-}
-
-sf::Texture* TextureManager::getTexture(std::string key)
-{
-	if (textureTileMap[key] != nullptr)
-	{
-		return textureTileMap[key];
-	}
-
-	else
-	{
-		std::cout << "No texture found for " << key << std::endl;
-		return nullptr;
-	}
-}
